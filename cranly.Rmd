@@ -1,0 +1,56 @@
+---
+title: "The cranly package"
+output: html_notebook
+---
+
+
+`cranly`, released to CRAN in March 2018 by Ioannis Kosmidis, is a very polished tool for exploring CRAN packages.
+
+```{r}
+library(cranly)
+library(tidyverse)
+```
+
+Fetch the package data base from CRAN usint the `CRAN_padkage_db()` function in the `tools` package and save it to disk.
+
+```{r,include=FALSE}
+p_db_052518 <- tools::CRAN_package_db()
+save(p_db_052518, file = "p_db_052518.RDA")
+```   
+
+Load the data base from disk and have a look at it.
+```{r}
+load(file = "p_db_052518.RDA")
+class(p_db_052518)
+glimpse(p_db_052518)
+```
+
+Clean the data base using the built in function:
+`clean_CRAN_db(packages_db = tools::CRAN_package_db(),
+  clean_directives = clean_up_directives, clean_author = clean_up_author)`
+
+```{r}
+package_db <- clean_CRAN_db(p_db_052518)
+
+```
+
+Note that there is quite a bit of hard-coded stuff in the clean function.
+
+```{r}
+clean_up_author
+``` 
+
+
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
