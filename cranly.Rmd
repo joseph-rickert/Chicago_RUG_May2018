@@ -22,12 +22,12 @@ Load the data base from disk and have a look at it.
 ```{r}
 load(file = "p_db_052518.RDA")
 class(p_db_052518)
-glimpse(p_db_052518)
+glimpse(p_db_052518) 
 ```
 
 Clean the data base using the built in function:
 `clean_CRAN_db(packages_db = tools::CRAN_package_db(),
-  clean_directives = clean_up_directives, clean_author = clean_up_author)`
+  clean_directives = clean_up_directives, clean_author = clean_up_author)`. 
 
 ```{r}
 package_db <- clean_CRAN_db(p_db_052518)
@@ -37,20 +37,58 @@ package_db <- clean_CRAN_db(p_db_052518)
 Note that there is quite a bit of hard-coded stuff in the clean function.
 
 ```{r}
-clean_up_author
+#clean_up_author
 ``` 
 
+### Look at Package Networks
+
+```{r,message=FALSE,warning=FALSE}
+package_network <- build_network(package_db)
+package_summaries <- summary(package_network)
+plot(package_summaries, according_to = "n_imported_by", top = 20)
+```
+
+Here is the Page Rank for the top 20.
+```{r}
+plot(package_summaries, according_to = "page_rank", top = 20)
+```
+
+### Collaboration Networks
+Set up to plot packages by authors.
+
+```{r}
+author_network <- build_network(object = package_db, perspective = "author")
+```
+
+#### Jeff Ryan
+```{r}
+plot(author_network, author = "Jeffrey A Ryan", exact = FALSE)
+```
+
+#### Dirk Eddelbuettel
+```{r}
+plot(author_network, author = "Dirk Eddelbuettel", exact = FALSE)
+```
+
+
+### Create Package Dependency Tree   
+
+
+```{r}
+xts_tree <- build_dependence_tree(package_network, "xts")
+plot(xts_tree)
+```   
 
 
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+### Search for Packages
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+```{r}
+Bayesian_packages <- package_with(package_network, name = c("Bayes", "MCMC"))
+plot(package_network, package = Bayesian_packages, legend=FALSE)
+
+```
 
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 

@@ -21,6 +21,10 @@ p + geom_bar(stat="identity") +
     ggtitle("Number New Packages by Month")
 ```
 
+![](summer.png)   
+
+
+![](ross.png)
 
 ### CRANberries
 
@@ -67,7 +71,10 @@ By intended use:
 
 ### Professional Packages
 
-* References behind paywall    
+![](prof_pkg.png)
+
+#### Characteristics of Professional Packages
+* References behind pay wall    
 * No vignette    
 * No README    
 * Looks like quite a bit of work went into it    
@@ -77,13 +84,17 @@ By intended use:
 ### What am I looking for?
 
 * Documentation   
-   + Well-written descriptions in the pdg
-   + vigntttes 
+   + Well-written descriptions in the pdf file
+   + vignettes 
    + README and NEWS
    + Built-out websites
-   + Referennces
+   + References
 * A sense of how broad an audience it will attract
 * A sense of excitement and craftsmanship
+
+Selection Influencers    
+* Inclusion in a [Task View](http://www.maths.lancs.ac.uk/~rowlings/R/TaskViews/)  
+* An author with a track record
 
 
 ### Good R Packages:    
@@ -156,10 +167,5 @@ Systems of packages that work together:
 * The [Tidyverse](https://www.tidyverse.org/)    
 
 
-
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
 
 
