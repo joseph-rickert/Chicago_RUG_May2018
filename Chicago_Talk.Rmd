@@ -64,10 +64,9 @@ By application domain:
 
 By intended use:
 
-* Public  
-* Private  
-   + Personal   
-   + Professional  
+* Public    
+* Personal   
+* Professional  
 
 ### Professional Packages
 
@@ -167,5 +166,7 @@ Systems of packages that work together:
 * The [Tidyverse](https://www.tidyverse.org/)    
 
 
+### Notebooks for this talk are here:
+https://github.com/joseph-rickert/Chicago_RUG_May2018
 
 
