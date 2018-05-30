@@ -4,7 +4,7 @@ output: html_notebook
 ---
 `pkgnet` was released to CRAN in April by Brian Burns, James Lamb, Patrick Boueri and Jay Qi. ( Note the R core document [Who Did What?](https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf) describes how to specify the roles of authors in R packages.)
 
-It provides tools from the domain of graph theory to quantify the complexity and vulnerability to failure of a software package. These tools to analyze the dependencies between functions in an R package and between its imported packages.
+The authors aim to provide tools quantify the complexity and vulnerability to failure of a software package by analyzing the dependencies between functions in an R package as well as its imported packages. There is some overlap with `cranly` but the focus is more on individual packages.
 
 ```{r, message=FALSE, warning=FALSE}
 library(pkgnet)
