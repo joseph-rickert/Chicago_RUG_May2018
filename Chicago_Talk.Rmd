@@ -1,5 +1,5 @@
 ---
-title: "Watching CRAN PacKages"
+title: "Watching CRAN Packages"
 output: html_notebook
 ---
 About 200 new packages arrive at CRAN each month and stick. I look at all of them, make my picks for the "Top 40" and blog about it on R Views:
@@ -148,7 +148,7 @@ rmarkdown | 2014| Reproducible research               | Allaire et al.
 shiny     | 2012| Web apps & reactive programming     | Chang et al.
 sp        | 2005| Spatial statistics                  | Pebesma et al.
 XML       | 2000| Work with XML & HTML                | Temple Lang et al.
-zoo       | 2004| Time Series                         | Zeileis et al.
+Xts / zoo       | 2004| Time Series                         | Ryan and Zeileis et al.
 
 ### Contributions of Hall of Fame Packages
 
