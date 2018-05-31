@@ -11,7 +11,7 @@ library(cranly)
 library(tidyverse)
 ```
 
-Fetch the package data base from CRAN usint the `CRAN_padkage_db()` function in the `tools` package and save it to disk.
+Fetch the package data base from CRAN usint the `CRAN_package_db()` function in the `tools` package and save it to disk.
 
 ```{r,include=FALSE}
 p_db_052518 <- tools::CRAN_package_db()
